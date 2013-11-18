@@ -25,6 +25,20 @@
 		D97F878C183A77E700A1390E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97F8767183A77E700A1390E /* CoreData.framework */; };
 		D97F8794183A77E700A1390E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D97F8792183A77E700A1390E /* InfoPlist.strings */; };
 		D97F8796183A77E700A1390E /* EmployeeDirectoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D97F8795183A77E700A1390E /* EmployeeDirectoryTests.m */; };
+		D97F87A1183A78D200A1390E /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = D97F87A0183A78D200A1390E /* Employee.m */; };
+		D97F87A4183A79ED00A1390E /* ReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D97F87A3183A79ED00A1390E /* ReportsViewController.m */; };
+		D97F87B2183A7B7700A1390E /* amy_jones.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87A6183A7B7700A1390E /* amy_jones.jpg */; };
+		D97F87B3183A7B7700A1390E /* eugene_lee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87A7183A7B7700A1390E /* eugene_lee.jpg */; };
+		D97F87B4183A7B7700A1390E /* gary_donovan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87A8183A7B7700A1390E /* gary_donovan.jpg */; };
+		D97F87B5183A7B7700A1390E /* james_king.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87A9183A7B7700A1390E /* james_king.jpg */; };
+		D97F87B6183A7B7700A1390E /* john_williams.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87AA183A7B7700A1390E /* john_williams.jpg */; };
+		D97F87B7183A7B7700A1390E /* julie_taylor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87AB183A7B7700A1390E /* julie_taylor.jpg */; };
+		D97F87B8183A7B7700A1390E /* kathleen_byrne.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87AC183A7B7700A1390E /* kathleen_byrne.jpg */; };
+		D97F87B9183A7B7700A1390E /* lisa_wong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87AD183A7B7700A1390E /* lisa_wong.jpg */; };
+		D97F87BA183A7B7700A1390E /* paul_jones.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87AE183A7B7700A1390E /* paul_jones.jpg */; };
+		D97F87BB183A7B7700A1390E /* paula_gates.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87AF183A7B7700A1390E /* paula_gates.jpg */; };
+		D97F87BC183A7B7700A1390E /* ray_moore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87B0183A7B7700A1390E /* ray_moore.jpg */; };
+		D97F87BD183A7B7700A1390E /* steven_wells.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97F87B1183A7B7700A1390E /* steven_wells.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +75,22 @@
 		D97F8791183A77E700A1390E /* EmployeeDirectoryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EmployeeDirectoryTests-Info.plist"; sourceTree = "<group>"; };
 		D97F8793183A77E700A1390E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D97F8795183A77E700A1390E /* EmployeeDirectoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDirectoryTests.m; sourceTree = "<group>"; };
+		D97F879F183A78D200A1390E /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		D97F87A0183A78D200A1390E /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		D97F87A2183A79ED00A1390E /* ReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsViewController.h; sourceTree = "<group>"; };
+		D97F87A3183A79ED00A1390E /* ReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsViewController.m; sourceTree = "<group>"; };
+		D97F87A6183A7B7700A1390E /* amy_jones.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amy_jones.jpg; sourceTree = "<group>"; };
+		D97F87A7183A7B7700A1390E /* eugene_lee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eugene_lee.jpg; sourceTree = "<group>"; };
+		D97F87A8183A7B7700A1390E /* gary_donovan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gary_donovan.jpg; sourceTree = "<group>"; };
+		D97F87A9183A7B7700A1390E /* james_king.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = james_king.jpg; sourceTree = "<group>"; };
+		D97F87AA183A7B7700A1390E /* john_williams.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = john_williams.jpg; sourceTree = "<group>"; };
+		D97F87AB183A7B7700A1390E /* julie_taylor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = julie_taylor.jpg; sourceTree = "<group>"; };
+		D97F87AC183A7B7700A1390E /* kathleen_byrne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kathleen_byrne.jpg; sourceTree = "<group>"; };
+		D97F87AD183A7B7700A1390E /* lisa_wong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lisa_wong.jpg; sourceTree = "<group>"; };
+		D97F87AE183A7B7700A1390E /* paul_jones.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paul_jones.jpg; sourceTree = "<group>"; };
+		D97F87AF183A7B7700A1390E /* paula_gates.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paula_gates.jpg; sourceTree = "<group>"; };
+		D97F87B0183A7B7700A1390E /* ray_moore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ray_moore.jpg; sourceTree = "<group>"; };
+		D97F87B1183A7B7700A1390E /* steven_wells.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steven_wells.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +153,9 @@
 		D97F8769183A77E700A1390E /* EmployeeDirectory */ = {
 			isa = PBXGroup;
 			children = (
+				D97F87A5183A7B4C00A1390E /* pics */,
+				D97F87A2183A79ED00A1390E /* ReportsViewController.h */,
+				D97F87A3183A79ED00A1390E /* ReportsViewController.m */,
 				D97F8772183A77E700A1390E /* AppDelegate.h */,
 				D97F8773183A77E700A1390E /* AppDelegate.m */,
 				D97F8775183A77E700A1390E /* Main.storyboard */,
@@ -132,6 +165,8 @@
 				D97F877F183A77E700A1390E /* DetailViewController.m */,
 				D97F8781183A77E700A1390E /* Images.xcassets */,
 				D97F8778183A77E700A1390E /* EmployeeDirectory.xcdatamodeld */,
+				D97F879F183A78D200A1390E /* Employee.h */,
+				D97F87A0183A78D200A1390E /* Employee.m */,
 				D97F876A183A77E700A1390E /* Supporting Files */,
 			);
 			path = EmployeeDirectory;
@@ -164,6 +199,25 @@
 				D97F8792183A77E700A1390E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D97F87A5183A7B4C00A1390E /* pics */ = {
+			isa = PBXGroup;
+			children = (
+				D97F87A6183A7B7700A1390E /* amy_jones.jpg */,
+				D97F87A7183A7B7700A1390E /* eugene_lee.jpg */,
+				D97F87A8183A7B7700A1390E /* gary_donovan.jpg */,
+				D97F87A9183A7B7700A1390E /* james_king.jpg */,
+				D97F87AA183A7B7700A1390E /* john_williams.jpg */,
+				D97F87AB183A7B7700A1390E /* julie_taylor.jpg */,
+				D97F87AC183A7B7700A1390E /* kathleen_byrne.jpg */,
+				D97F87AD183A7B7700A1390E /* lisa_wong.jpg */,
+				D97F87AE183A7B7700A1390E /* paul_jones.jpg */,
+				D97F87AF183A7B7700A1390E /* paula_gates.jpg */,
+				D97F87B0183A7B7700A1390E /* ray_moore.jpg */,
+				D97F87B1183A7B7700A1390E /* steven_wells.jpg */,
+			);
+			name = pics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +296,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D97F87B6183A7B7700A1390E /* john_williams.jpg in Resources */,
 				D97F8782183A77E700A1390E /* Images.xcassets in Resources */,
+				D97F87B8183A7B7700A1390E /* kathleen_byrne.jpg in Resources */,
+				D97F87B2183A7B7700A1390E /* amy_jones.jpg in Resources */,
+				D97F87B3183A7B7700A1390E /* eugene_lee.jpg in Resources */,
+				D97F87BA183A7B7700A1390E /* paul_jones.jpg in Resources */,
+				D97F87B5183A7B7700A1390E /* james_king.jpg in Resources */,
+				D97F87BC183A7B7700A1390E /* ray_moore.jpg in Resources */,
 				D97F876E183A77E700A1390E /* InfoPlist.strings in Resources */,
+				D97F87BB183A7B7700A1390E /* paula_gates.jpg in Resources */,
+				D97F87BD183A7B7700A1390E /* steven_wells.jpg in Resources */,
+				D97F87B9183A7B7700A1390E /* lisa_wong.jpg in Resources */,
+				D97F87B7183A7B7700A1390E /* julie_taylor.jpg in Resources */,
+				D97F87B4183A7B7700A1390E /* gary_donovan.jpg in Resources */,
 				D97F8777183A77E700A1390E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +332,8 @@
 				D97F8780183A77E700A1390E /* DetailViewController.m in Sources */,
 				D97F877D183A77E700A1390E /* MasterViewController.m in Sources */,
 				D97F8774183A77E700A1390E /* AppDelegate.m in Sources */,
+				D97F87A4183A79ED00A1390E /* ReportsViewController.m in Sources */,
+				D97F87A1183A78D200A1390E /* Employee.m in Sources */,
 				D97F877A183A77E700A1390E /* EmployeeDirectory.xcdatamodeld in Sources */,
 				D97F8770183A77E700A1390E /* main.m in Sources */,
 			);

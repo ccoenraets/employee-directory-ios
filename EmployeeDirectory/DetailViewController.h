@@ -2,15 +2,27 @@
 //  DetailViewController.h
 //  EmployeeDirectory
 //
-//  Created by Christophe Coenraets on 11/18/13.
+//  Created by Christophe Coenraets on 11/12/13.
 //  Copyright (c) 2013 Christophe Coenraets. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "Employee.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) id detailItem;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+- (NSURL *)applicationDocumentsDirectory;
+
+@property (strong, nonatomic) Employee *employee;
+
+@property (weak, nonatomic) IBOutlet UIView *listContainer;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *employeePic;
+@property (weak, nonatomic) IBOutlet UITableView *actionList;
+
 @end
