@@ -101,7 +101,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Df-m7-1Hm">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Df-m7-1Hm">
                                 <rect key="frame" x="115" y="84" width="194" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -122,7 +122,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tRe-Hx-J5O">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tRe-Hx-J5O">
                                 <rect key="frame" x="7" y="186" width="302" height="362"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -159,10 +159,13 @@
                             <constraint firstAttribute="trailing" secondItem="zJR-zv-ZGF" secondAttribute="trailing" constant="11" id="3ng-qh-mqP"/>
                             <constraint firstAttribute="trailing" secondItem="tRe-Hx-J5O" secondAttribute="trailing" constant="11" id="8RZ-A0-aHQ"/>
                             <constraint firstItem="Znt-rH-Nu3" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" constant="7" id="8vw-eL-bPu"/>
+                            <constraint firstItem="tRe-Hx-J5O" firstAttribute="top" secondItem="kef-8D-GC8" secondAttribute="bottom" constant="122" id="AeS-Ou-U4G"/>
+                            <constraint firstItem="tRe-Hx-J5O" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" constant="7" id="Bnt-3O-U6t"/>
                             <constraint firstItem="pgM-jM-BjY" firstAttribute="top" secondItem="tRe-Hx-J5O" secondAttribute="bottom" constant="20" id="Imw-9l-sNC"/>
                             <constraint firstItem="zJR-zv-ZGF" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" constant="115" id="RZZ-04-xjA"/>
                             <constraint firstItem="zJR-zv-ZGF" firstAttribute="top" secondItem="kef-8D-GC8" secondAttribute="bottom" constant="49" id="Rzh-Zf-s2l"/>
                             <constraint firstItem="Znt-rH-Nu3" firstAttribute="top" secondItem="kef-8D-GC8" secondAttribute="bottom" constant="7" id="cL8-7q-vrr"/>
+                            <constraint firstAttribute="trailing" secondItem="6Df-m7-1Hm" secondAttribute="trailing" constant="11" id="hsW-cU-N0p"/>
                             <constraint firstItem="zJR-zv-ZGF" firstAttribute="top" secondItem="kef-8D-GC8" secondAttribute="bottom" constant="49" id="m5D-6g-hyN"/>
                             <constraint firstItem="6Df-m7-1Hm" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" constant="115" id="n7e-Xn-0yG"/>
                             <constraint firstItem="6Df-m7-1Hm" firstAttribute="top" secondItem="kef-8D-GC8" secondAttribute="bottom" constant="20" id="uIh-2l-H96"/>

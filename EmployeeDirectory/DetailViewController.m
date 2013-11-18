@@ -106,7 +106,7 @@
         }
         
         if ([reports count] > 0) {
-            NSDictionary *reportsAction = [NSDictionary dictionaryWithObjectsAndKeys:@"View Reports", @"label", [NSString stringWithFormat:@"%lu", [reports count]], @"data", @"reports", @"command", nil];
+            NSDictionary *reportsAction = [NSDictionary dictionaryWithObjectsAndKeys:@"View Reports", @"label", [NSString stringWithFormat:@"%d", [reports count]], @"data", @"reports", @"command", nil];
             [self.actions addObject:reportsAction];
         }
     }
