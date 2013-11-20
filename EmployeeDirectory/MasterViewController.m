@@ -11,15 +11,13 @@
 #import "Employee.h"
 
 
-@interface MasterViewController () <NSFetchedResultsControllerDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
-@property (strong, nonatomic) NSArray *filteredList;
+@interface MasterViewController () <UISearchDisplayDelegate, UISearchBarDelegate>
+@property (strong, nonatomic) NSArray *employees;
+@property (strong, nonatomic) NSArray *filteredEmployees;
 @property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
-//- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation MasterViewController
-
-@synthesize employees;
 
 - (void)awakeFromNib
 {
@@ -29,7 +27,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Employee" inManagedObjectContext:moc];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entityDescription];
+    
+    NSError *error;
+    self.employees = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
 }
 
@@ -45,17 +51,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
-    //    return 1;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.tableView) {
-        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-        return [sectionInfo numberOfObjects];
+    if (tableView == self.tableView)
+    {
+        return [self.employees count];
     } else {
-        return [self.filteredList count];
+        return [self.filteredEmployees count];
     }
 }
 
@@ -66,20 +71,15 @@
     Employee *employee = nil;
     if (tableView == self.tableView)
     {
-        employee = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        employee = [self.employees objectAtIndex:indexPath.row];
     }
     else
     {
-        employee = [self.filteredList objectAtIndex:indexPath.row];
+        employee = [self.filteredEmployees objectAtIndex:indexPath.row];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",
-                           employee.firstName, employee.lastName];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", employee.firstName, employee.lastName];
     cell.detailTextLabel.text = employee.title;
-    
-    
-    
-    //    [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
@@ -87,23 +87,7 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
-        NSError *error = nil;
-        if (![context save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
+    return NO;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -118,51 +102,16 @@
     if (self.searchDisplayController.isActive)
     {
         NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:sender];
-        employee = [self.filteredList objectAtIndex:indexPath.row];
+        employee = [self.filteredEmployees objectAtIndex:indexPath.row];
     } else {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        employee = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        employee = [self.employees objectAtIndex:indexPath.row];
     }
-    [[segue destinationViewController] setEmployee:employee];
-}
 
-#pragma mark - Fetched results controller
+    DetailViewController *detailVC = [segue destinationViewController];
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Employee" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    // Set the batch size to a suitable number.
-    [fetchRequest setFetchBatchSize:20];
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptor];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
-    
-    return _fetchedResultsController;
+    detailVC.managedObjectContext = self.managedObjectContext;
+    detailVC.employee = employee;
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
@@ -185,8 +134,8 @@
         [self.searchFetchRequest setPredicate:predicate];
         
         NSError *error = nil;
-        self.filteredList = [self.managedObjectContext executeFetchRequest:self.searchFetchRequest error:&error];
-        NSLog(@"search results: %lu", (unsigned long)[self.filteredList count]);
+        self.filteredEmployees = [self.managedObjectContext executeFetchRequest:self.searchFetchRequest error:&error];
+        NSLog(@"search results: %lu", (unsigned long)[self.filteredEmployees count]);
     }
 }
 
@@ -202,7 +151,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Employee" inManagedObjectContext:self.managedObjectContext];
     [_searchFetchRequest setEntity:entity];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:NO];
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
     [_searchFetchRequest setSortDescriptors:sortDescriptors];
     

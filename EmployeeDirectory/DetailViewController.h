@@ -11,12 +11,7 @@
 
 @interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
-- (NSURL *)applicationDocumentsDirectory;
-
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) Employee *employee;
 
 @property (weak, nonatomic) IBOutlet UIView *listContainer;

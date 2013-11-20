@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ReportsViewController : UITableViewController
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *reports;
+
 @end

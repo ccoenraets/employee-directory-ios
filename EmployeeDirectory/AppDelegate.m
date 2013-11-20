@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-
 #import "MasterViewController.h"
 #import "Employee.h"
 
@@ -24,14 +23,13 @@
     MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     
-    
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
     {
         NSLog(@"This is the first launch");
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        // Adding some data
+        // Adding sample data
         [self addEmployee:@1 firstName:@"James" lastName:@"King" title:@"CEO" managerId:@0 officePhone:@"617-219-2001" cellPhone:@"781-219-9991" email:@"jking@fakemail.com" picture:@"james_king.jpg" ];
         [self addEmployee:@2 firstName:@"Julie" lastName:@"Taylor" title:@"VP of Marketing" managerId:@1 officePhone:@"617-219-2001" cellPhone:@"781-219-9992" email:@"julie@fakemail.com" picture:@"julie_taylor.jpg" ];
         [self addEmployee:@3 firstName:@"Eugene" lastName:@"Lee" title:@"CFO" managerId:@1 officePhone:@"617-219-2003" cellPhone:@"781-219-9993" email:@"eugene@fakemail.com" picture:@"eugene_lee.jpg" ];
@@ -58,9 +56,7 @@ cellPhone:(NSString *)cellPhone
 email:(NSString *)email
 picture:(NSString *)picture
 {
-    Employee *employee = [NSEntityDescription
-                          insertNewObjectForEntityForName:@"Employee"
-                          inManagedObjectContext:self.managedObjectContext];
+    Employee *employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:self.managedObjectContext];
     
     employee.id = id;
     employee.firstName = firstName;
